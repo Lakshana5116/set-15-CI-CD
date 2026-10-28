@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: set15-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: set15-web
+  template:
+    metadata:
+      labels:
+        app: set15-web
+    spec:
+      containers:
+        - name: set15-nginx
+          image: lakshana5116/set15-nginx:1.0
+          ports:
+            - containerPort: 80
